@@ -37,7 +37,7 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
         },
       ],
     },
-    theme: 'system',
+    theme: 'dark',
     skin: Skins.Default,
     iconRenderer: VIcon,
   },
