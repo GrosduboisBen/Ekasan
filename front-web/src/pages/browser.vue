@@ -158,6 +158,10 @@ watch(fileStore, async () => {
     await fetchFilteredDocuments()
   }
 })
+watch(selectedStoreId,async () => {
+  await getAsyncFilesFromStore()
+
+})
 </script>
 
 <template>

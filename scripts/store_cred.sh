@@ -1,9 +1,9 @@
 #!/bin/sh
 
 # Chemin vers le fichier .env monté dans le volume
-ENV_FILE="/app/volume/.env"
 NAME="$1"
 VAL="$2"
+ENV_FILE="$3"
 # Vérifiez si le fichier .env existe
 if [ -f "$ENV_FILE" ]; then
     echo "$NAME=$VAL" >> "$ENV_FILE"

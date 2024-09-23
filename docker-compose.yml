@@ -1,7 +1,6 @@
-version: "3"
 services:
   pgdb:
-    image: postgres:14
+    image: postgres
     restart: always
     volumes:
       - type: volume
@@ -9,7 +8,7 @@ services:
         target: "/var/lib/postgresql/data"
 
     networks:
-      - ekasan-docker-network
+      - ekasan-network
     ports:
       - "0.0.0.0:5432:5432"
     environment:
@@ -20,7 +19,7 @@ services:
     build:
       context: Ekasan-API/
     networks:
-      - ekasan-docker-network
+      - ekasan-network
     volumes:
       - ./:/app/
     ports:
@@ -35,22 +34,12 @@ services:
       pgdb:
         condition: service_started
     command: sh -c "python scripts/is_db_ready.py && scripts/create_auth.sh"
-  # localstack:
-  #   image: localstack/localstack:2.0
-  #   ports:
-  #     - '0.0.0.0:4566:4566' # LocalStack endpoint
-  #     - '0.0.0.0:4510-4559:4510-4559' # external services port range
-  #   networks:
-  #     - ekasan-docker-network
-  #   volumes:
-  #     - "./localstack-script/init-aws.sh:/etc/localstack/init/ready.d/init-aws.sh"
-  #     - '/var/run/docker.sock:/var/run/docker.sock'
 
   ai_web:
     build:
       context: Ekasan-API/
     networks:
-      - ekasan-docker-network
+      - ekasan-network
     volumes:
       - ./:/app/
     ports:
@@ -58,8 +47,6 @@ services:
     depends_on:
       web:
         condition: service_healthy
-    # Replace in scripts/create_auth if needed to prevent multiple api key.
-    # ./scripts/store_cred.sh 'OPENAI_API_KEY' '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' &&
     command: sh -c "
         python Ekasan-API/ai_api/manage.py migrate &&
         python Ekasan-API/ai_api/manage.py runserver 0.0.0.0:8000"
@@ -67,7 +54,7 @@ services:
     build:
       context: front-web
     networks:
-      - ekasan-docker-network
+      - ekasan-network
     volumes:
       - ./:/app/
       - node_modules:/app/node_modules
@@ -76,16 +63,12 @@ services:
     depends_on:
       web:
         condition: service_healthy
-    # Replace in scripts/create_auth if needed to prevent multiple api key.
-    # ./scripts/store_cred.sh 'OPENAI_API_KEY' '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' &&
     command: sh -c "
       chmod +x scripts/* &&
       scripts/init_front_env.sh"
-    # command: tail -f /dev/null
-  
 volumes:
   eksan-volume:
   pgdb-data: 
   node_modules:
 networks:
-  ekasan-docker-network:
+  ekasan-network:

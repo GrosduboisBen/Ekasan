@@ -48,6 +48,7 @@ declare module 'vue-router/auto/routes' {
     'create-assistant': RouteRecordInfo<'create-assistant', '/createAssistant', Record<never, never>, Record<never, never>>,
     'edit-assistant': RouteRecordInfo<'edit-assistant', '/editAssistant', Record<never, never>, Record<never, never>>,
     'login': RouteRecordInfo<'login', '/login', Record<never, never>, Record<never, never>>,
+    'register': RouteRecordInfo<'register', '/register', Record<never, never>, Record<never, never>>,
   }
 }
 

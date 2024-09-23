@@ -17,6 +17,7 @@ fi
 
 if [ "$IS_BUILDED" = "initiated" ]; then
     cd front-web
+    npm i --legacy-peer-deps
     npm run dev
 else
 
@@ -25,13 +26,13 @@ else
 
     echo "VITE_BASE_PATH_MAIN=http://localhost:8090/" >> "$DEST_FILE"
     echo "VITE_BASE_PATH_AI=http://localhost:8000/" >> "$DEST_FILE"
-
-
+    
     ./scripts/store_front_env.sh 'VITE_CLIENT_ID' 'CLIENT_ID'
     ./scripts/store_front_env.sh 'VITE_CLIENT_SEC' 'CLIENT_SECRET'
     ./scripts/store_front_env.sh 'VITE_CLIENT_PASS' 'ADMIN_PASS'
 
     echo "VITE_BUILDED=initiated" >> "$DEST_FILE"
     cd front-web
+    npm i --legacy-peer-deps
     npm run dev
 fi
