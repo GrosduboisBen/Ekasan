@@ -36,7 +36,7 @@ router.beforeEach((to, from) => {
     // make sure the user is authenticated
     !isAuthenticated &&
     // ❗️ Avoid an infinite redirect
-    to.name !== 'login'
+    (to.name !== 'login' && to.name !== 'register' )
   ) {
     // redirect the user to the login page
     deleteLocalStorage()

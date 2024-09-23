@@ -1,5 +1,5 @@
-import { I_User } from '@/utils/base-utils'
 import { mainApiClient } from '../utils'
+import type { I_User } from '@/utils/base-utils'
 
 export class BaseService {
   constructor() {
@@ -20,12 +20,26 @@ export class BaseService {
   public async getUser(userId: string): Promise<I_User> {
     return await mainApiClient.get(`/user/${userId}`)
   }
-  
 
-  public async verifyCreds(username:string,password:string){
-    return await mainApiClient.post('verify-credentials/',{
-      username: username,
-      password:password
+  public async register(
+    username: string,
+    first_name: string,
+    last_name: string,
+    password: string,
+  ) {
+    return await mainApiClient.post('user/create/', {
+      name: username,
+      username,
+      first_name,
+      last_name,
+      password,
+    })
+  }
+
+  public async verifyCreds(username: string, password: string) {
+    return await mainApiClient.post('verify-credentials/', {
+      username,
+      password,
     })
   }
 }

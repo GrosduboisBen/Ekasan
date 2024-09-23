@@ -28,7 +28,6 @@ const vectorList = ref([] as I_VectorInfo[])
 const vectorOptions = ref([] as string[])
 const selectedVectorName = ref(null as null | string)
 const selectedVectorId = ref(undefined as string | undefined)
-
 const assistantList = ref([] as APIAssistant[])
 const assistantOptions = ref([] as string[])
 const selectedAssistantName = ref(null as null | string)

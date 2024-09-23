@@ -19,6 +19,8 @@ else
     chmod a+wxr /app/Ekasan-API/ai_api/volume/.env
     touch /app/Ekasan-API/main/volume/.env
     chmod a+wxr /app/Ekasan-API/main/volume/.env
+    touch /app/front-web/volume/.env
+    chmod a+wxr /app/front-web/volume/.env
     echo "INITIATED=$INITIATED" > "$ENV_FILE"
     echo "Nouvelle variable ajoutée au fichier .env."
 fi
