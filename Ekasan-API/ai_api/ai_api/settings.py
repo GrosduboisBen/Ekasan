@@ -32,6 +32,7 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "http://localhost:5173",
     "ekasan-api-ai_web-1",
+    
 ]
 AUTH_USER_MODEL = "open_ai.BaseUser" 
 
