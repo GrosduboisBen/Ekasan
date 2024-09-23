@@ -26,8 +26,7 @@ else
 
     echo "VITE_BASE_PATH_MAIN=http://localhost:8090/" >> "$DEST_FILE"
     echo "VITE_BASE_PATH_AI=http://localhost:8000/" >> "$DEST_FILE"
-
-
+    
     ./scripts/store_front_env.sh 'VITE_CLIENT_ID' 'CLIENT_ID'
     ./scripts/store_front_env.sh 'VITE_CLIENT_SEC' 'CLIENT_SECRET'
     ./scripts/store_front_env.sh 'VITE_CLIENT_PASS' 'ADMIN_PASS'

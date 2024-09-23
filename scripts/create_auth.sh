@@ -25,7 +25,6 @@ else
     ./scripts/store_cred.sh 'OPENAI_API_KEY' "$ai_key" "/app/Ekasan-API/volume/.env"
     ./scripts/store_cred.sh 'OPENAI_API_KEY' "$ai_key" "/app/Ekasan-API/ai_api/volume/.env"
     ./scripts/store_cred.sh 'OPENAI_API_KEY' "$ai_key" "/app/Ekasan-API/main/volume/.env"
-    
     cd ./Ekasan-API
     python3 main/manage.py makemigrations
     python3 main/manage.py migrate
@@ -46,8 +45,6 @@ else
     ./scripts/store_cred.sh "CLIENT_ID" "$id" "/app/volume/.env"
     ./scripts/store_cred.sh "CLIENT_SECRET" "$client_secret" "/app/volume/.env"
     ./scripts/store_cred.sh "ADMIN_PASS" "$pass" "/app/volume/.env"
-
-    DEST_FILE="/app/front-web/.env"
 
     # Display in terminal
     echo "Le client_secret est : $client_secret"
