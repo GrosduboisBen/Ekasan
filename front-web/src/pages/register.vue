@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { router } from '@/plugins/1.router';
 import { BaseService } from '@/services/main/base-service'
 
 const baseService = new BaseService()
@@ -7,14 +8,13 @@ const first_name = ref('')
 const last_name = ref('')
 const password = ref('')
 async function register() {
-  const user = await baseService.register(
+  await baseService.register(
     username.value,
     first_name.value,
     last_name.value,
     password.value,
   )
-
-  console.log(user)
+  router.push('login')
 }
 
 const isPasswordVisible = ref(false)
