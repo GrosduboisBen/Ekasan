@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<svg width="96" height="96" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" version="1.1">
+ <g class="layer">
+  <title>Layer 1</title>
+  <g id="surface1">
+   <path d="m11.91,27.44l30.18,-17.42l0,5.68l-30.18,17.43l0,-5.69zm60.15,0l-30.17,-17.42l0,5.68l30.17,17.43l0,-5.69zm0,0" fill="#ffffff" fill-rule="nonzero" id="svg_1"/>
+   <path d="m48.03,6.34l30.17,17.43l-4.92,2.84l-30.17,-17.44l4.92,-2.83zm30.08,52.1l0,-34.85l-4.92,2.85l0,34.84l4.92,-2.84zm0,0" fill="#ffffff" fill-rule="nonzero" id="svg_2"/>
+   <path d="m84.11,27.13l0,34.84l-4.94,-2.86l0,-34.83l4.94,2.85zm-30.08,52.07l30.17,-17.4l-4.92,-2.86l-30.17,17.44l4.92,2.82zm0,0" fill="#ffffff" fill-rule="nonzero" id="svg_3"/>
+   <path d="m84.03,68.67l-30.17,17.42l0,-5.68l30.17,-17.43l0,5.69zm-60.15,0l30.18,17.41l0,-5.69l-30.18,-17.42l0,5.7zm0,0" fill="#ffffff" fill-rule="nonzero" id="svg_4"/>
+   <path d="m48.06,89.72l-30.17,-17.41l4.92,-2.86l30.17,17.43l-4.92,2.84zm-30.08,-52.09l0,34.84l4.94,-2.84l0,-34.85l-4.94,2.85zm0,0" fill="#ffffff" fill-rule="nonzero" id="svg_5"/>
+   <path d="m11.91,69.05l0,-34.86l4.92,2.86l0,34.84l-4.92,-2.84zm30.07,-52.1l-30.17,17.43l4.94,2.84l30.17,-17.42l-4.94,-2.85zm0,0" fill="#ffffff" fill-rule="nonzero" id="svg_6"/>
+  </g>
+ </g>
+</svg>

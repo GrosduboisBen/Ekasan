@@ -1,0 +1,13 @@
+oauth2_provider
+djangorestframework
+django-cors-headers
+django-filter
+psycopg2-binary
+django-oauth-toolkit
+python-decouple
+Django
+django-storages
+boto3
+localstack
+awscli-local
+openai

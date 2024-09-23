@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      initContainers:
+      - name: init-script
+        image: alpine:latest
+        command:
+        - /bin/sh
+        - -c
+        - |
+          mkdir -p /scripts && cp -L /app/scripts/* /scripts/
+        volumeMounts:
+        - name: script-volume
+          mountPath: /app/scripts
+        - name: script-temp
+          mountPath: /scripts
+      containers:
+      - name: web
+        image: 058264311571.dkr.ecr.eu-west-3.amazonaws.com/ekasan-repository:latest
+        ports:
+        - containerPort: 8090
+        volumeMounts:
+        - name: script-temp
+          mountPath: /app/scripts
+        command: ["/bin/sh", "-c", "chmod +x /app/scripts/*.sh && python3 /app/scripts/is_db_ready.py && /app/scripts/create_auth.sh"]
+      volumes:
+      - name: script-volume
+        configMap:
+          name: web-scripts-config
+      - name: script-temp
+        emptyDir: {}
+
+
+
+
