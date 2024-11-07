@@ -66,7 +66,7 @@ export const useChatStore = defineStore('chat', {
             id: CHATBOT_ANSWER_PLACEHOLDER_ID,
           } as ChatMessage
 
-          this.activeChat.messages = replaceObjectInArray(this.activeChat.messages as any[], '0', finalAnswerMessageWithoutQuote) as ChatMessage[]
+          this.activeChat!.messages = replaceObjectInArray(this.activeChat!.messages as any[], '0', finalAnswerMessageWithoutQuote) as ChatMessage[]
           this.botIsThinking = false
           this.botIsAnswering = false
         })

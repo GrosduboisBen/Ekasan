@@ -1,4 +1,3 @@
-/* stylelint-disable scss/no-global-function-names */
 <script lang="ts" setup>
 import { parse } from 'marked'
 import { VCardTitle, VDivider, VLabel, VListItem } from 'vuetify/lib/components/index.mjs'
@@ -106,8 +105,7 @@ const msg = ref('')
 
 await chatStore.fetchChat()
 
-chatStore.addMessage('Test message', ChatMessageEmitter.EkasanDefaultBot)
-chatStore.addMessage('User Message', ChatMessageEmitter.User)
+chatStore.addMessage('How can I help you ?', ChatMessageEmitter.EkasanDefaultBot)
 
 const scrollChat = () => {
   if (questionChatLogPS.value != null)
